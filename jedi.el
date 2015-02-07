@@ -1112,7 +1112,7 @@ may find some information about communication error."
   "Return output of virtualenv --version"
   (with-temp-buffer
     (erase-buffer)
-    (call-process (executable-find (car python-environment-virtualenv))
+    (process-file (executable-find (car python-environment-virtualenv))
                   nil t nil
                   "--version")
     (buffer-string)))
